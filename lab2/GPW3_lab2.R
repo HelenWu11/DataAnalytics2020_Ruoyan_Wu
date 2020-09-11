@@ -10,7 +10,7 @@ summary(GPW3$Resolution)
 fivenum(GPW3$Resolution, na.rm=TRUE)
 stem(GPW3$Resolution)
 hist(GPW3$Resolution)
-hist(GPW3$Resolution, seq(30., 95., 1.0), prob=TRUE)
+hist(GPW3$Resolution, seq(0., 400., 50.), prob=TRUE)
 lines(density(GPW3$Resolution, na.rm=TRUE, bw=1.))
 rug(GPW3$Resolution)
 
@@ -30,7 +30,7 @@ summary(GPW3$UNSDCode)
 fivenum(GPW3$UNSDCode, na.rm=TRUE)
 stem(GPW3$UNSDCode)
 hist(GPW3$UNSDCode)
-hist(EPI_data$UNSDCode, seq(30., 95., 1.0), prob=TRUE)
+hist(GPW3$UNSDCode, seq(0., 400., 50.), prob=TRUE)
 lines(density(GPW3$UNSDCode, na.rm=TRUE, bw=1.))
 rug(GPW3$UNSDCode)
 
@@ -43,3 +43,4 @@ qqplot(qt(ppoints(250), df=5),x,xlab="Q-Q plot for tdsn")
 qqline(x)
 
 boxplot(Resolution, UNSDCode)
+
