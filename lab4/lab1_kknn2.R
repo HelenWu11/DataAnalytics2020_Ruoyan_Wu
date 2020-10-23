@@ -1,5 +1,6 @@
 require(kknn)
 data(ionosphere)
+View(ionosphere)
 ionosphere.learn <- ionosphere[1:200,]
 ionosphere.valid <- ionosphere[-c(1:200),]
 fit.kknn <- kknn(class ~ ., ionosphere.learn, ionosphere.valid)

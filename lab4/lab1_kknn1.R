@@ -1,5 +1,6 @@
 require(kknn)
 data(iris)
+View(iris)
 m <- dim(iris)[1]
 val <- sample(1:m, size = round(m/3), replace = FALSE, 
               prob = rep(1/m, m)) 

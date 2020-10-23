@@ -1,8 +1,9 @@
+library(gdata)
 bronx1$SALE.PRICE<-sub("\\$","",bronx1$SALE.PRICE) 
 bronx1$SALE.PRICE<-as.numeric(gsub(",","", bronx1$SALE.PRICE)) 
 bronx1$GROSS.SQUARE.FEET<-as.numeric(gsub(",","", bronx1$GROSS.SQUARE.FEET)) 
 bronx1$LAND.SQUARE.FEET<-as.numeric(gsub(",","", bronx1$LAND.SQUARE.FEET)) 
-bronx1$SALE.DATE<- as.Date(gsub("[^]:digit:]]","",bronx1$SALE.DATE)) 
+bronx1$SALE.DATE<- as.Date(gsub("[^]:digit:]]","",bronx1$SALE.DATE))
 bronx1$YEAR.BUILT<- as.numeric(gsub("[^]:digit:]]","",bronx1$YEAR.BUILT)) 
 bronx1$ZIP.CODE<- as.character(gsub("[^]:digit:]]","",bronx1$ZIP.CODE)) 
 
@@ -12,7 +13,7 @@ nval<-dim(bronx1)[1]
 
 bronx1$ADDRESSONLY<- gsub("[,][[:print:]]*","",gsub("[ ]+","",trim(bronx1$ADDRESS))) 
 bronxadd<-unique(data.frame(bronx1$ADDRESSONLY, bronx1$ZIP.CODE,stringsAsFactors=FALSE)) 
-bronxadd<-c("ADDRESSONLY","ZIP.CODE") 
+names(bronxadd)<-c("ADDRESSONLY","ZIP.CODE") 
 bronxadd<-bronxadd[order(bronxadd$ADDRESSONLY),] 
 duplicates<-duplicated(bronx1$ADDRESSONLY)
 
