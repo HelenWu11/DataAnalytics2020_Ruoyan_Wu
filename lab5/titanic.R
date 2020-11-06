@@ -21,3 +21,12 @@ plot(titanic_ctree)
 titanic_hclust <- dist(as.matrix(titanic))
 hc <- hclust(titanic_hclust)
 plot(hc)
+
+#randomForest
+library(randomForest)
+fit <- randomForest(Survived ~.,
+                    data=titanic, 
+                    importance=TRUE, 
+                    ntree=2000)
+print(fit)
+importance(fit)
